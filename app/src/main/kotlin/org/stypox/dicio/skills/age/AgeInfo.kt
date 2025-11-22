@@ -1,18 +1,19 @@
-package org.stypox.dicio.skills.age // Paquete correcto en inglés
+package org.stypox.dicio.skills.age
 
 import android.content.Context
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Cake // Icono más apropiado
+import androidx.compose.material.icons.filled.Cake
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import org.dicio.skill.context.SkillContext
 import org.dicio.skill.skill.Skill
+import org.dicio.skill.skill.SkillInfo
 import org.stypox.dicio.sentences.Sentences
 
 object AgeInfo : SkillInfo("age") {
     override fun name(context: Context) = "Calculadora de edad"
     
-    override fun exampleSentence(context: Context) = "Cuántos días tengo"
+    override fun exampleSentence(context: Context) = "cuántos días tengo"
     
     @Composable
     override fun icon() = rememberVectorPainter(Icons.Default.Cake)
