@@ -1,18 +1,27 @@
-package org.stypox.dicio.skills.age
+package org.stypox.dicio.skills.age // Paquete correcto en inglés
 
+import android.content.Context
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Cake // Icono más apropiado
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
+import org.dicio.skill.context.SkillContext
+import org.dicio.skill.skill.Skill
 import org.stypox.dicio.sentences.Sentences
-import org.stypox.dicio.skills.SkillContext
-import org.stypox.dicio.skills.SkillInfo
-import org.stypox.dicio.skills.StandardRecognizerData
 
 object AgeInfo : SkillInfo("age") {
-    override fun name(ctx: SkillContext) = "Age Calculator"
-    override fun sentenceExample(ctx: SkillContext) = "How many days do I have?"
-    override fun icon(ctx: SkillContext) = org.stypox.dicio.R.drawable.ic_calculator
-
+    override fun name(context: Context) = "Calculadora de edad"
+    
+    override fun exampleSentence(context: Context) = "Cuántos días tengo"
+    
+    @Composable
+    override fun icon() = rememberVectorPainter(Icons.Default.Cake)
+    
     override fun isAvailable(ctx: SkillContext): Boolean {
         return Sentences.Age[ctx.sentencesLanguage] != null
     }
-
-    override fun build(ctx: SkillContext) = AgeSkill(this, Sentences.Age[ctx.sentencesLanguage]!!)
+    
+    override fun build(ctx: SkillContext): Skill<*> {
+        return AgeSkill(AgeInfo, Sentences.Age[ctx.sentencesLanguage]!!)
+    }
 }
