@@ -1,5 +1,5 @@
 ask:
-  - cuantos dias tengo
-  - cuantos dias he vivido
-  - cuantos dias de vida tengo
-  - edad en dias
+- cuantos dias tengo          # ❌ Faltaba guion
+- cuantos dias he vivido
+- cuantos dias de vida tengo
+- edad en dias                # ❌ Faltaba guion
