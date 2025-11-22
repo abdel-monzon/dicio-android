@@ -1,15 +1,14 @@
 package org.stypox.dicio.skills.age
 
-import androidx.compose.runtime.Composable
-import org.stypox.dicio.skills.SkillContext
-import org.stypox.dicio.skills.SkillOutput
+import org.dicio.skill.context.SkillContext
+import org.stypox.dicio.ui.graphic.HeadlineSpeechSkillOutput
+import org.stypox.dicio.util.getString
 
-data class AgeOutput(val days: Int) : SkillOutput {
-    override fun getSpeechOutput(ctx: SkillContext): String =
-        "You have lived $days days"
-
-    @Composable
-    override fun GraphicalOutput(ctx: SkillContext) {
-        /* UI simple; por ahora vacía */
-    }
+class AgeOutput(
+    private val days: Int
+) : HeadlineSpeechSkillOutput(
+    speechText = "Has vivido $days días" // Texto directo para prueba
+) {
+    // Si tienes string resources, usa:
+    // speechText = ctx.getString(R.string.skill_age_result, days)
 }
