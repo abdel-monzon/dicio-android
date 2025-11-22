@@ -112,6 +112,11 @@ skills:
           - id: where
             type: string
 
+  - id: age
+    specificity: medium
+    sentences:
+      - id: ask
+      
   - id: translation
     specificity: high
     sentences:
