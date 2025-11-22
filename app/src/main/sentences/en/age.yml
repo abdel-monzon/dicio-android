@@ -1,5 +1,5 @@
 ask:
-  - how many days do i have
-  - how many days have i lived
-  - how old am i in days
-  - calculate my days lived
+- how many days do i have
+- how many days have i lived
+- how old am i in days        # ❌ Faltaba guion
+- calculate my days lived     # ❌ Faltaba guion
