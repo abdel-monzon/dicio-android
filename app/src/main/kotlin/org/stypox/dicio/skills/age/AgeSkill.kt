@@ -3,11 +3,12 @@ package org.stypox.dicio.skills.age
 import org.dicio.skill.context.SkillContext
 import org.dicio.skill.skill.Skill
 import org.dicio.skill.skill.SkillOutput
+import org.dicio.skill.skill.Specificity
 import org.dicio.skill.standard.StandardScore
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class AgeSkill : Skill<Unit>(AgeInfo, StandardScore.EMPTY) {
+class AgeSkill : Skill<Unit>(AgeInfo, Specificity.HIGH) {
     
     override fun score(ctx: SkillContext, input: String): Pair<StandardScore, Unit> {
         // Detectar si la entrada es sobre edad/días/vida
