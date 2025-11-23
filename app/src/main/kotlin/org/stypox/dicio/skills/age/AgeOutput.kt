@@ -2,7 +2,6 @@ package org.stypox.dicio.skills.age
 
 import org.stypox.dicio.skills.SkillOutput
 import android.content.Context
-import org.stypox.dicio.R
 
 class AgeOutput(
     private val years: Int,
@@ -21,6 +20,6 @@ class AgeOutput(
     }
     
     override fun display(context: Context): String {
-        return speak(context) // Puedes personalizar esto diferente si quieres
+        return speak(context)
     }
 }
