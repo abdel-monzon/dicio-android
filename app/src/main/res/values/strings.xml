@@ -244,13 +244,13 @@
     <string name="skill_weather_meters_per_second">m/s</string>
     <string name="skill_weather_miles_per_hour">mph</string>
     <string name="failed_to_copy">Failed to copy to clipboard</string>
+    <string name="skill_search_duckduckgo_recaptcha">DuckDuckGo did not provide results, asking for a Captcha to be solved</string>
+    <string name="skill_age_name">Age Calculator</string>
+    <string name="skill_age_example">How long have I lived?</string>
     <string name="skill_translation_auto">Auto</string>
     <string name="skill_search_duckduckgo_recaptcha">DuckDuckGo did not provide results, asking for a Captcha to be solved</string>
     <string name="skill_age_name">Age Calculator</string>
     <string name="skill_age_example">How long have I lived?</string>
-    <string name="skill_translation_name">Translator</string>
-    <string name="skill_translation_example">translate \"hello world\" from english to spanish</string>
-    <string name="skill_translation_output">Translation: %1$s</string>
     <string name="skill_name_translation">Translator</string>
     <string name="skill_sentence_example_translation">translate \"hello world\" from english to spanish</string>
     <string name="skill_translation_failed_no_query">You did not specify what to translate</string>
@@ -259,4 +259,6 @@
     <string name="skill_translation_failed">Failed to translate to %1$s</string>
     <string name="skill_translation_success">Translated to %1$s</string>
     <string name="skill_translation_to">to</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="share">Share</string>
 </resources>
