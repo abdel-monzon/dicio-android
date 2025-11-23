@@ -1,13 +1,21 @@
 package org.stypox.dicio.skills.age
 
-import org.stypox.dicio.skills.Skill
+import org.dicio.skill.context.SkillContext
+import org.dicio.skill.skill.SkillInfo
+import org.dicio.skill.skill.SkillOutput
+import org.dicio.skill.standard.StandardRecognizerData
+import org.dicio.skill.standard.StandardRecognizerSkill
+import org.stypox.dicio.sentences.Sentences.Age
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class AgeSkill : Skill<AgeOutput>() {
+class AgeSkill(
+    correspondingSkillInfo: SkillInfo,
+    data: StandardRecognizerData<Age>
+) : StandardRecognizerSkill<Age>(correspondingSkillInfo, data) {
     
-    override suspend fun generateOutput(input: String): AgeOutput {
-        // Fecha de nacimiento de ejemplo
+    override suspend fun generateOutput(ctx: SkillContext, inputData: Age): SkillOutput {
+        // Fecha de nacimiento de ejemplo - luego puedes extraerla del input del usuario
         val birthDate = LocalDate.of(2000, 1, 1)
         val today = LocalDate.now()
         
