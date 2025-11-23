@@ -12,21 +12,20 @@ import org.stypox.dicio.R
 import org.stypox.dicio.sentences.Sentences
 
 object AgeInfo : SkillInfo("age") {
-    override fun name(context: Context) =
+    override fun name(context: Context): String = 
         context.getString(R.string.skill_age_name)
 
-    override fun sentenceExample(context: Context) =
+    override fun sentenceExample(context: Context): String = 
         context.getString(R.string.skill_age_example)
 
     @Composable
-    override fun icon() =
-        rememberVectorPainter(Icons.Default.Cake)
+    override fun icon() = rememberVectorPainter(Icons.Default.Cake)
 
     override fun isAvailable(ctx: SkillContext): Boolean {
         return Sentences.Age[ctx.sentencesLanguage] != null
     }
 
     override fun build(ctx: SkillContext): Skill<*> {
-        return AgeSkill(AgeInfo, Sentences.Age[ctx.sentencesLanguage]!!)
+        return AgeSkill()
     }
 }
