@@ -1,6 +1,16 @@
-input: [traduce, {query}, del, {source}, al, {target}]
-input: [cómo, se, dice, {query}, en, {target}]
-input: [qué, significa, {query}, en, {target}]
-input: [traduce, {query}, a, {target}]
-input: [traducción, de, {query}]
-input: [puedes, traducir, {query}]
+skills:
+  - id: translation
+    specificity: high
+    sentences:
+      - id: translate
+        input: [traduce, {query}, del, {source}, al, {target}]
+      - id: how_to_say
+        input: [cómo, se, dice, {query}, en, {target}]
+      - id: what_is
+        input: [qué, significa, {query}, en, {target}]
+      - id: translate_to
+        input: [traduce, {query}, a, {target}]
+      - id: translation_of
+        input: [traducción, de, {query}]
+      - id: can_translate
+        input: [puedes, traducir, {query}]
