@@ -1,16 +1,4 @@
-skills:
-  - id: translation
-    specificity: high
-    sentences:
-      - id: translate
-        input: [traduce, {query}, del, {source}, al, {target}]
-      - id: how_to_say
-        input: [cómo, se, dice, {query}, en, {target}]
-      - id: what_is
-        input: [qué, significa, {query}, en, {target}]
-      - id: translate_to
-        input: [traduce, {query}, a, {target}]
-      - id: translation_of
-        input: [traducción, de, {query}]
-      - id: can_translate
-        input: [puedes, traducir, {query}]
+translate:
+  - (puedes | podrías )? por favor? traducir .query. ( (del .source. )? ( <al?> .target. )? ) | ( <al?> .target. del .source. ) ( para mí )?
+  - (me gustaría saber | dime )? qué (es | son .query. ) ( .query. es | son ) en .target. ( del .source. )?
+  - cómo <debo|puedo|se> decir | traducir .query. en .target.
