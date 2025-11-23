@@ -221,6 +221,8 @@
     <string name="skill_listening_disabled">The wake word service is disabled in settings</string>
     <string name="skill_name_listening">Control wake word listening</string>
     <string name="skill_sentence_example_listening">Stop listening</string>
+    <string name="skill_name_translation">Translator</string>
+    <string name="skill_sentence_example_translation">translate \"hello world\" from english to spanish</string>
     <string name="skill_translation_success">Translated to %1$s</string>
     <string name="skill_translation_unknown_language">I don\'t recognize language %1$s</string>
     <string name="skill_translation_unsupported_language">Language %1$s (%2$s) is not supported</string>
@@ -251,14 +253,5 @@
     <string name="skill_search_duckduckgo_recaptcha">DuckDuckGo did not provide results, asking for a Captcha to be solved</string>
     <string name="skill_age_name">Age Calculator</string>
     <string name="skill_age_example">How long have I lived?</string>
-    <string name="skill_name_translation">Translator</string>
-    <string name="skill_sentence_example_translation">translate \"hello world\" from english to spanish</string>
-    <string name="skill_translation_failed_no_query">You did not specify what to translate</string>
-    <string name="skill_translation_unknown_language">I don\'t recognize the language \"%1$s\"</string>
-    <string name="skill_translation_unsupported_language">The language %1$s (%2$s) is not supported</string>
-    <string name="skill_translation_failed">Failed to translate to %1$s</string>
-    <string name="skill_translation_success">Translated to %1$s</string>
-    <string name="skill_translation_to">to</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="share">Share</string>
+    
 </resources>
