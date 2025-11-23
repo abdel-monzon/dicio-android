@@ -222,4 +222,6 @@
     <string name="pref_weather_length_unit">Unidad de medida</string>
     <string name="pref_weather_length_unit_imperial">Imperial</string>
     <string name="skill_weather_celsius">°C</string>
+    <string name="skill_age_name">Calculadora de Edad</string>
+    <string name="skill_age_example">¿Cuánto tiempo he vivido?</string>
 </resources>
