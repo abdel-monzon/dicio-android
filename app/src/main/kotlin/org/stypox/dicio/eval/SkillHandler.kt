@@ -33,6 +33,7 @@ import org.stypox.dicio.skills.weather.WeatherInfo
 import org.stypox.dicio.skills.joke.JokeInfo
 import javax.inject.Inject
 import javax.inject.Singleton
+import org.stypox.dicio.skills.age.AgeInfo
 
 @Singleton
 class SkillHandler @Inject constructor(
@@ -51,6 +52,7 @@ class SkillHandler @Inject constructor(
         TelephoneInfo,
         TimerInfo,
         CurrentTimeInfo,
+        AgeInfo,
         MediaInfo,
         JokeInfo,
         ListeningInfo(dataStore),
