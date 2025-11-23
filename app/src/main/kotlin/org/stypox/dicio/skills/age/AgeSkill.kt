@@ -1,21 +1,22 @@
 package org.stypox.dicio.skills.age
 
 import org.dicio.skill.context.SkillContext
-import org.dicio.skill.skill.SkillInfo
+import org.dicio.skill.skill.Skill
 import org.dicio.skill.skill.SkillOutput
-import org.dicio.skill.standard.StandardRecognizerData
-import org.dicio.skill.standard.StandardRecognizerSkill
-import org.stypox.dicio.sentences.Sentences.Age
+import org.dicio.skill.skill.Score
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class AgeSkill(
-    correspondingSkillInfo: SkillInfo,
-    data: StandardRecognizerData<Age>
-) : StandardRecognizerSkill<Age>(correspondingSkillInfo, data) {
+class AgeSkill : Skill<Unit>(AgeInfo, Score.GOOD) {
     
-    override suspend fun generateOutput(ctx: SkillContext, inputData: Age): SkillOutput {
-        // Fecha de nacimiento de ejemplo - luego puedes extraerla del input del usuario
+    override fun score(ctx: SkillContext, input: String): Pair<Score, Unit> {
+        // Por ahora, siempre devolvemos un score GOOD para cualquier input
+        // Más adelante puedes implementar lógica de reconocimiento real
+        return Pair(Score.GOOD, Unit)
+    }
+    
+    override suspend fun generateOutput(ctx: SkillContext, inputData: Unit): SkillOutput {
+        // Fecha de nacimiento de ejemplo
         val birthDate = LocalDate.of(2000, 1, 1)
         val today = LocalDate.now()
         
