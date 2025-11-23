@@ -1,4 +1,0 @@
-input: [translate, {query}, from, {source}, to, {target}]
-input: [how, to, say, {query}, in, {target}]
-input: [what, is, {query}, in, {target}]
-input: [translate, {query}, to, {target}]
