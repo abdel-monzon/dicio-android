@@ -1,6 +1,4 @@
 translate:
-  - (puedes | podrías )? traducir .query. ( del .source. )? ( al .target. )?
-  - (puedes | podrías )? traducir .query. a .target.
+  - traducir .query. del .source. al .target.
+  - traducir .query. a .target.
   - cómo se dice .query. en .target.
-  - qué significa .query. en .target.
-  - (me gustaría saber | dime )? qué es .query. en .target.
