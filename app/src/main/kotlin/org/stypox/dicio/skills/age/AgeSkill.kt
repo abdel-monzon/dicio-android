@@ -7,12 +7,11 @@ import org.dicio.skill.skill.Score
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class AgeSkill : Skill<Unit>(AgeInfo, Score.GOOD) {
+class AgeSkill : Skill<Unit>(AgeInfo, Score(0.8f)) {
     
     override fun score(ctx: SkillContext, input: String): Pair<Score, Unit> {
-        // Por ahora, siempre devolvemos un score GOOD para cualquier input
-        // Más adelante puedes implementar lógica de reconocimiento real
-        return Pair(Score.GOOD, Unit)
+        // Por ahora, siempre devolvemos un score de 0.8 para cualquier input
+        return Pair(Score(0.8f), Unit)
     }
     
     override suspend fun generateOutput(ctx: SkillContext, inputData: Unit): SkillOutput {
