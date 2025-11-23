@@ -224,9 +224,6 @@
     <string name="skill_weather_celsius">°C</string>
     <string name="skill_age_name">Calculadora de Edad</string>
     <string name="skill_age_example">¿Cuánto tiempo he vivido?</string>
-    <string name="skill_translation_name">Traductor</string>
-    <string name="skill_translation_example">traduce \"hola mundo\" del español al inglés</string>
-    <string name="skill_translation_output">Traducción: %1$s</string>
     <string name="skill_name_translation">Traductor</string>
     <string name="skill_sentence_example_translation">traduce \"hola mundo\" del español al inglés</string>
     <string name="skill_translation_failed_no_query">No especificaste qué quieres traducir</string>
