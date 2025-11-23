@@ -1,0 +1,4 @@
+input: [traduce, {query}, del, {source}, al, {target}]
+input: [cómo, se, dice, {query}, en, {target}]
+input: [qué, significa, {query}, en, {target}]
+input: [traduce, {query}, a, {target}]
