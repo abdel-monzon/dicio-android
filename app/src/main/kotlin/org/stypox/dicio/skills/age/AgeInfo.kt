@@ -8,7 +8,6 @@ import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import org.stypox.dicio.R
 import org.stypox.dicio.skills.SkillInfo
 import org.stypox.dicio.skills.Skill
-import org.stypox.dicio.sentences.Sentences
 
 object AgeInfo : SkillInfo() {
     override fun name(context: Context): String = context.getString(R.string.skill_age_name)
@@ -17,10 +16,6 @@ object AgeInfo : SkillInfo() {
     
     @Composable
     override fun icon() = rememberVectorPainter(Icons.Default.Cake)
-    
-    override fun isAvailable(ctx: org.stypox.dicio.skills.SkillContext): Boolean {
-        return Sentences.Age[ctx.sentencesLanguage] != null
-    }
     
     override fun skill(): Skill<*> = AgeSkill()
 }
