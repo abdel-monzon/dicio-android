@@ -7,11 +7,20 @@ import org.dicio.skill.skill.Score
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
 
-class AgeSkill : Skill<Unit>(AgeInfo, Score(0.8f)) {
+class AgeSkill : Skill<Unit>(AgeInfo, Score.GOOD) {
     
     override fun score(ctx: SkillContext, input: String): Pair<Score, Unit> {
-        // Por ahora, siempre devolvemos un score de 0.8 para cualquier input
-        return Pair(Score(0.8f), Unit)
+        // Si la entrada contiene palabras relacionadas con edad/días/vivir, devolvemos GOOD
+        val ageKeywords = listOf("age", "años", "días", "viv", "old", "tiempo", "how long")
+        val containsAgeWord = ageKeywords.any { keyword -> 
+            input.contains(keyword, ignoreCase = true) 
+        }
+        
+        return if (containsAgeWord) {
+            Pair(Score.GOOD, Unit)
+        } else {
+            Pair(Score.BAD, Unit)
+        }
     }
     
     override suspend fun generateOutput(ctx: SkillContext, inputData: Unit): SkillOutput {
