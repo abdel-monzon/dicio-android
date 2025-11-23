@@ -1,15 +1,15 @@
 package org.stypox.dicio.skills.age
 
 import org.dicio.skill.context.SkillContext
-import org.stypox.dicio.io.graphical.HeadlineSpeechSkillOutput
+import org.dicio.skill.skill.SkillOutput
 
 class AgeOutput(
     private val years: Int,
     private val months: Int,
     private val days: Int
-) : HeadlineSpeechSkillOutput {
+) : SkillOutput {
     
-    override fun getSpeechOutput(ctx: SkillContext): String {
+    override fun speak(ctx: SkillContext): String {
         return if (years > 0) {
             "Has vivido $years años, $months meses y $days días"
         } else if (months > 0) {
@@ -17,5 +17,9 @@ class AgeOutput(
         } else {
             "Has vivido $days días"
         }
+    }
+    
+    override fun display(ctx: SkillContext): String {
+        return speak(ctx)
     }
 }
