@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit
 class AgeSkill : Skill<AgeOutput>() {
     
     override suspend fun generateOutput(input: String): AgeOutput {
-        // Fecha de nacimiento de ejemplo - luego puedes hacer que el usuario la ingrese
+        // Fecha de nacimiento de ejemplo
         val birthDate = LocalDate.of(2000, 1, 1)
         val today = LocalDate.now()
         
