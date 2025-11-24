@@ -16,21 +16,19 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          # Removemos cache para limpieza total
+          # Sin cache para limpieza total
           
-      - name: Clean deep cleanup
+      - name: Deep clean and build
         run: |
           chmod +x gradlew
+          # Limpieza profunda
           ./gradlew clean
           rm -rf build/
           rm -rf app/build/
           rm -rf .gradle/
-          ./gradlew cleanBuildCache
-          
-      - name: Build APKs
-        run: |
-          ./gradlew assembleDebug
-          ./gradlew assembleRelease
+          # Build sin cache
+          ./gradlew assembleDebug --no-daemon --no-build-cache
+          ./gradlew assembleRelease --no-daemon --no-build-cache
           
       - name: Upload APKs
         uses: actions/upload-artifact@v4
