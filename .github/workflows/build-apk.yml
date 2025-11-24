@@ -1,4 +1,4 @@
-name: Build Signed APK
+name: Build APK
 
 on:
   workflow_dispatch:
@@ -8,47 +8,24 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         
-      - name: Setup Java
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: 'gradle'
           
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - run: chmod +x gradlew
         
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
-        # Esto instala el Android SDK automáticamente
+      # Build both debug and release
+      - run: ./gradlew clean
+      - run: ./gradlew assembleDebug
+      - run: ./gradlew assembleRelease
         
-      - name: Create keystore properties
-        run: |
-          cat << EOF > keystore.properties
-          storePassword=android
-          keyPassword=android
-          keyAlias=androiddebugkey
-          storeFile=debug.keystore
-          EOF
-          
-      - name: Create debug keystore
-        run: |
-          keytool -genkey -v -keystore debug.keystore \
-          -storepass android -alias androiddebugkey -keypass android \
-          -keyalg RSA -keysize 2048 -validity 10000 \
-          -dname "CN=Android Debug,O=Android,C=US"
-          
-      - name: Build Release APK
-        run: ./gradlew assembleRelease
-        
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: app-release-signed
+          name: android-apks
           path: |
-            app/build/outputs/apk/release/app-release.apk
             app/build/outputs/apk/debug/app-debug.apk
-          retention-days: 7
+            app/build/outputs/apk/release/app-release.apk
