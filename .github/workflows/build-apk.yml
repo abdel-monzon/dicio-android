@@ -8,24 +8,35 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         
-      - uses: actions/setup-java@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: 'gradle'
+          # Removemos cache para limpieza total
           
-      - run: chmod +x gradlew
-        
-      # Build both debug and release
-      - run: ./gradlew clean
-      - run: ./gradlew assembleDebug
-      - run: ./gradlew assembleRelease
-        
-      - uses: actions/upload-artifact@v4
+      - name: Clean deep cleanup
+        run: |
+          chmod +x gradlew
+          ./gradlew clean
+          rm -rf build/
+          rm -rf app/build/
+          rm -rf .gradle/
+          ./gradlew cleanBuildCache
+          
+      - name: Build APKs
+        run: |
+          ./gradlew assembleDebug
+          ./gradlew assembleRelease
+          
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
         with:
-          name: android-apks
+          name: mi-asistente-apks
           path: |
             app/build/outputs/apk/debug/app-debug.apk
             app/build/outputs/apk/release/app-release.apk
+          retention-days: 3
