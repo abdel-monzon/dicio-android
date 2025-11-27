@@ -1,11 +1,6 @@
 set:
-  - notifica(r)?me|alerta(r)?me en .duration.
-  - establece(r)?|ajusta(r)?|configura(r)?|inicia(r)?|crea(r)? un? temporizador|cronómetro|contador (con duración)? de .duration. ((denominado|llamado|(con el nombre de)) .name.)?
-
-cancel:
-  - cancela(r)?|detén|detener ((el? temporizador|cronómetro|contador llamado|(con el nombre de))|(los? temporizadores|cronómetros|contadores (llamados|(con el nombre de))))? .name.
-  - silencia(r)?|desactiva(r)? ((el|la? alarma|timbre llamado|(con el nombre de))|(los|las? alarmas|timbres (denominados|llamados|(con el nombre de))))? .name.
-
-query:
-  - cuánto tiempo (le|te)? queda|resta|falta|sobra al|(en el) temporizador|cronómetro|contador (llamado|(con el nombre de) .name.)?
-  - cuándo terminará|finalizará|(se detendrá) el temporizador|cronómetro|contador (llamado|(con el nombre de) .name.)?
+  - establece un temporizador de .duration.
+  - establece un temporizador de .duration. llamado .name.
+  - configura un temporizador de .duration.
+  - inicia un temporizador de .duration. denominado .name.
+  - crea un cronómetro de .duration.
