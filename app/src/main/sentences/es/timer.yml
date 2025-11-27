@@ -1,11 +1,18 @@
-set:
-  - "pon el temporizador"
-  - "activa el temporizador"
-
-cancel:
-  - "cancela el temporizador"
-  - "detén el temporizador"
-
-query:
-  - "¿cuánto tiempo queda?"
-  - "estado del temporizador"
+skills:
+  - id: timer
+    specificity: high
+    sentences:
+      - id: set
+        input: [pon, el, temporizador]
+      - id: set_alt
+        input: [activa, el, temporizador]
+      - id: set_duration
+        input: [pon, el, temporizador, de, .duration.]
+      - id: cancel
+        input: [cancela, el, temporizador]
+      - id: cancel_alt
+        input: [detén, el, temporizador]
+      - id: query
+        input: [cuánto, tiempo, queda]
+      - id: query_alt
+        input: [estado, del, temporizador]
