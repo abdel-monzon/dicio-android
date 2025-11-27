@@ -1,18 +1,11 @@
-skills:
-  - id: timer
-    specificity: high
-    sentences:
-      - id: set
-        input: [pon, el, temporizador]
-      - id: set_alt
-        input: [activa, el, temporizador]
-      - id: set_duration
-        input: [pon, el, temporizador, de, .duration.]
-      - id: cancel
-        input: [cancela, el, temporizador]
-      - id: cancel_alt
-        input: [detén, el, temporizador]
-      - id: query
-        input: [cuánto, tiempo, queda]
-      - id: query_alt
-        input: [estado, del, temporizador]
+set:
+  - temporizador|(avísame en) .duration.
+  - (configurar?)|iniciar|crear (un? )?(temporizador (.duration. )?)|(temporizador (de|para )?.duration.? (llamado|con el nombre) .name.?)
+
+cancel:
+  - cancelar|detener|desactivar|finalizar|terminar (el )?(.name.? temporizador)|(temporizador (llamado|con el nombre) .name.)
+  - silenciar|apagar|quitar sonido|mutear (el )?(.name.? temporizador|alerta|sonido|timbre)|(temporizador|alerta|sonido|timbre (llamado|con el nombre) .name.)
+
+query:
+  - cuánto (tiempo )?queda? (en )?(el )?(.name.? temporizador)|(temporizador (llamado|con el nombre) .name.)
+  - cuándo (va a |se )?vencer? (el )?(.name.? temporizador)|(temporizador (llamado|con el nombre) .name.)
