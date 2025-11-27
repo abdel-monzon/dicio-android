@@ -1,3 +1,10 @@
 calculate:
-  - calcula|calcúla(me)?|determina|halla|encuentra|opera|opera(me)? (el valor de)|(cuánto vale|es|fa)? .calculation.
-  - cuánto vale|es|fa .calculation.
+  - calcula .calculation.
+  - calcúla(me)? .calculation.
+  - determina (el valor de)? .calculation.
+  - halla (el valor de)? .calculation.
+  - encuentra (el valor de)? .calculation.
+  - opera .calculation.
+  - opera(me)? .calculation.
+  - cuánto vale .calculation.
+  - cuánto es .calculation.
