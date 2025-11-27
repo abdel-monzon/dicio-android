@@ -1,6 +1,16 @@
-set:
-  - establece un temporizador de .duration.
-  - establece un temporizador de .duration. llamado .name.
-  - configura un temporizador de .duration.
-  - inicia un temporizador de .duration. denominado .name.
-  - crea un cronómetro de .duration.
+skills:
+  - id: timer
+    specificity: high
+    sentences:
+      - id: set
+        input: [establece, un, temporizador, de, .duration.]
+      - id: set_named
+        input: [establece, un, temporizador, de, .duration., llamado, .name.]
+      - id: cancel
+        input: [cancela, el, temporizador]
+      - id: cancel_named
+        input: [cancela, el, temporizador, .name.]
+      - id: query
+        input: [cuánto, tiempo, queda, en, el, temporizador]
+      - id: query_named
+        input: [cuánto, tiempo, queda, en, el, temporizador, .name.]
