@@ -1,17 +1,11 @@
 set:
-- configura un temporizador de {duration: duration}
-- establece un temporizador de {duration: duration}
-- pon un temporizador de {duration: duration}
-- temporizador de {duration: duration}
-- necesito un temporizador de {duration: duration}
+  - notifica(r)?me|alerta(r)?me en .duration.
+  - establece(r)?|ajusta(r)?|configura(r)?|inicia(r)?|crea(r)? un? temporizador|cronómetro|contador (con duración)? de .duration. ((denominado|llamado|(con el nombre de)) .name.)?
 
 cancel:
-- cancela el temporizador
-- detén el temporizador
-- para el temporizador
-- elimina el temporizador
+  - cancela(r)?|detén|detener ((el? temporizador|cronómetro|contador llamado|(con el nombre de))|(los? temporizadores|cronómetros|contadores (llamados|(con el nombre de))))? .name.
+  - silencia(r)?|desactiva(r)? ((el|la? alarma|timbre llamado|(con el nombre de))|(los|las? alarmas|timbres (denominados|llamados|(con el nombre de))))? .name.
 
 query:
-- cuanto tiempo queda en el temporizador
-- cuanto falta para que termine el temporizador
-- estado del temporizador
+  - cuánto tiempo (le|te)? queda|resta|falta|sobra al|(en el) temporizador|cronómetro|contador (llamado|(con el nombre de) .name.)?
+  - cuándo terminará|finalizará|(se detendrá) el temporizador|cronómetro|contador (llamado|(con el nombre de) .name.)?
