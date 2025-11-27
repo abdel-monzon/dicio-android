@@ -79,21 +79,41 @@ skills:
         captures:
           - id: who
             type: string
-
+            
   - id: timer
     specificity: high
     sentences:
       - id: set
+        input: [establece, un, temporizador, de, .duration.]
+        captures:
+          - id: duration
+            type: duration
+          - id: name
+            type: string
+      - id: set_named
+        input: [establece, un, temporizador, de, .duration., llamado, .name.]
         captures:
           - id: duration
             type: duration
           - id: name
             type: string
       - id: cancel
+        input: [cancela, el, temporizador]
+        captures:
+          - id: name
+            type: string
+      - id: cancel_named
+        input: [cancela, el, temporizador, .name.]
         captures:
           - id: name
             type: string
       - id: query
+        input: [cuánto, tiempo, queda, en, el, temporizador]
+        captures:
+          - id: name
+            type: string
+      - id: query_named
+        input: [cuánto, tiempo, queda, en, el, temporizador, .name.]
         captures:
           - id: name
             type: string
