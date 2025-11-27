@@ -33,8 +33,8 @@ class AgeSkill : Skill<Unit>(AgeInfo, Specificity.HIGH) {
     }
     
     override suspend fun generateOutput(ctx: SkillContext, inputData: Unit): SkillOutput {
-        // Fecha de nacimiento de ejemplo
-        val birthDate = LocalDate.of(2000, 1, 1)
+        // ✅ FECHA CORREGIDA: 15 de diciembre de 1993
+        val birthDate = LocalDate.of(1993, 12, 15)
         val today = LocalDate.now()
         
         val years = ChronoUnit.YEARS.between(birthDate, today).toInt()
