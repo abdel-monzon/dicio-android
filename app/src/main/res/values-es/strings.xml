@@ -235,6 +235,4 @@
     <string name="skill_translation_to">a</string>
     <string name="skill_name_joke">Chistes</string>
     <string name="skill_sentence_example_joke">Cuéntame un chiste</string>
-    <string name="skill_sentence_example_calculator">¿Cuánto es cinco por cuatro menos un millón?</string>
-    <string name="skill_calculator_could_not_calculate">No pude calcular su solicitud</string>
 </resources>
