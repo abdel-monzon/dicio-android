@@ -1,27 +1,33 @@
+// CONFIGURACIÓN DE FIRMA CONSTANTE PARA ACTUALIZACIONES
 android {
+    // Primero eliminar las configuraciones existentes para evitar duplicados
     signingConfigs {
-        create("debug") {
-            storeFile = file("debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
+        // Limpiar configuraciones existentes
+        debug {
+            initWith(signingConfigs.debug)
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
         }
-        create("release") {
-            storeFile = file("debug.keystore")
-            storePassword = "android"
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
+        
+        release {
+            initWith(signingConfigs.release)
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey' 
+            keyPassword 'android'
         }
     }
 
     buildTypes {
         debug {
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig signingConfigs.debug
         }
         release {
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
