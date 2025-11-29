@@ -25,7 +25,7 @@ plugins {
     alias(libs.plugins.dicio.unicode.cldr.plugin)
 }
 
-// ⬇️ CORREGIDO: Sintaxis Kotlin DSL para aplicar el archivo signing
+// ⬇️ Aplicar configuración de firma CONSTANTE
 apply(from = "signing.gradle")
 
 android {
@@ -86,10 +86,8 @@ android {
         buildConfig = true
         compose = true
     }
-    // ⬆️ REMOVIDO: apply from: 'signing.gradle' de aquí
 }
 
-// ... (el resto del archivo se mantiene igual)
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 }
