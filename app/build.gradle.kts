@@ -25,8 +25,6 @@ plugins {
     alias(libs.plugins.dicio.unicode.cldr.plugin)
 }
 
-apply from: 'signing.gradle'
-
 android {
     namespace = "org.stypox.dicio"
     compileSdk = libs.versions.compileSdk.get().toInt()
@@ -85,6 +83,7 @@ android {
         buildConfig = true
         compose = true
     }
+    apply from: 'signing.gradle'
 }
 
 tasks.withType<Test>().configureEach {
