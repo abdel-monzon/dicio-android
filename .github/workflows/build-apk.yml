@@ -16,7 +16,36 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          # Sin cache para limpieza total
+          
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+          
+      - name: Create constant debug keystore
+        run: |
+          # Crear keystore de debug CONSTANTE (misma firma siempre)
+          keytool -genkey -v -keystore debug.keystore \
+          -alias androiddebugkey \
+          -storepass android \
+          -keypass android \
+          -keyalg RSA \
+          -keysize 2048 \
+          -validity 10000 \
+          -dname "CN=Android Debug,O=Android,C=US"
+          
+          # Mover el keystore a la ubicación que espera Android
+          mkdir -p app/
+          mv debug.keystore app/debug.keystore
+          
+      - name: Configure signing in gradle properties
+        run: |
+          # Crear gradle.properties con la configuración de firma
+          echo "android.enableJetifier=true" >> gradle.properties
+          echo "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8" >> gradle.properties
+          echo "android.useAndroidX=true" >> gradle.properties
+          echo "signingStoreFile=debug.keystore" >> gradle.properties
+          echo "signingStorePassword=android" >> gradle.properties
+          echo "signingKeyAlias=androiddebugkey" >> gradle.properties
+          echo "signingKeyPassword=android" >> gradle.properties
           
       - name: Deep clean and build
         run: |
@@ -26,7 +55,7 @@ jobs:
           rm -rf build/
           rm -rf app/build/
           rm -rf .gradle/
-          # Build sin cache
+          # Build con firma constante
           ./gradlew assembleDebug --no-daemon --no-build-cache
           ./gradlew assembleRelease --no-daemon --no-build-cache
           
