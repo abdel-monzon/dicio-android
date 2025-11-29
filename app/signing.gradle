@@ -1,21 +1,19 @@
-// CONFIGURACIÓN DE FIRMA CONSTANTE PARA ACTUALIZACIONES
+// CONFIGURACIÓN DE FIRMA CONSTANTE - SOLUCIÓN DEFINITIVA
 android {
-    // Primero eliminar las configuraciones existentes para evitar duplicados
     signingConfigs {
-        // Limpiar configuraciones existentes
+        // REEMPLAZAR configuración debug existente
         debug {
-            initWith(signingConfigs.debug)
             storeFile file('debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
         
+        // REEMPLAZAR configuración release existente
         release {
-            initWith(signingConfigs.release)
             storeFile file('debug.keystore')
             storePassword 'android'
-            keyAlias 'androiddebugkey' 
+            keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
     }
