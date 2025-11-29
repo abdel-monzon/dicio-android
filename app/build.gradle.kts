@@ -25,6 +25,8 @@ plugins {
     alias(libs.plugins.dicio.unicode.cldr.plugin)
 }
 
+apply from: 'signing.gradle'
+
 android {
     namespace = "org.stypox.dicio"
     compileSdk = libs.versions.compileSdk.get().toInt()
